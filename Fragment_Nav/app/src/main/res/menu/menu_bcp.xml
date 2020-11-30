@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardBCP"
+        android:icon="@drawable/ic_document_id"
+        android:title="Dashboard BCP" />
+
+    <item
+        android:id="@+id/operationBCP"
+        android:icon="@drawable/ic_4k"
+        android:title="Operaciones Frecuente" />
+
+
+</menu>
+
+

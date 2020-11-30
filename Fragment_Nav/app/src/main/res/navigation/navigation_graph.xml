@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/dashboardBCP">
+
+
+    <fragment
+        android:id="@+id/dashboardBCP"
+        android:name="pe.com.bootcamp.fragment_nav.bottomNavigation.DashboardBCPFragment"
+        android:label="Dashboard BCP"
+        tools:layout="@layout/fragment_dashboard_bcp">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/operationBCP"
+        android:name="pe.com.bootcamp.fragment_nav.bottomNavigation.OperacionFrecuenteBCPFragment"
+        android:label="Operacion Frecuente"
+        tools:layout="@layout/fragment_opercion_frecuente_bcp">
+
+    </fragment>
+
+
+</navigation>

@@ -5,13 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_primero.*
-import pe.com.bootcamp.fragment_nav.R
+import pe.com.bootcamp.fragment_nav.databinding.FragmentPrimeroBinding
 
 class PrimerFragment : Fragment(), View.OnClickListener {
+
+
+    private var _binding: FragmentPrimeroBinding? = null
+    private val binding get() = _binding!!
+
+
     lateinit var listener: OnPrimerFragmentListener
+
 
 
     override fun onCreateView(
@@ -21,12 +26,20 @@ class PrimerFragment : Fragment(), View.OnClickListener {
     ): View {
 
 
-        return inflater.inflate(R.layout.fragment_primero, container, false)
+        _binding = FragmentPrimeroBinding.inflate(inflater, container, false)
+
+        // Inflate the layout for this fragment
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        butPrimerFragment.setOnClickListener(this)
+        binding.butPrimerFragment.setOnClickListener(this)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onClick(view: View) {

@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.dialog_terms_condition.*
 import pe.com.bootcamp.fragment_nav.R
+import pe.com.bootcamp.fragment_nav.databinding.DialogTermsConditionBinding
 
 
 class TermsConditionDialog : DialogFragment() {
 
+
+    private var _binding: DialogTermsConditionBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,18 +30,21 @@ class TermsConditionDialog : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
+        _binding = DialogTermsConditionBinding.inflate(inflater, container, false)
 
+        // Inflate the layout for this fragment
+        return binding.root
+    }
 
-        return inflater.inflate(R.layout.dialog_terms_condition, container, false)
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-        butAccept.setOnClickListener { dismiss() }
+        binding.butAccept.setOnClickListener { dismiss() }
 
 
     }

@@ -4,21 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
 import pe.com.bootcamp.fragment_nav.bottomNavigation.NavegacionActivity
-import pe.com.bootcamp.fragment_nav.dialog.TermsConditionDialog
+import pe.com.bootcamp.fragment_nav.databinding.ActivityMainBinding
 import pe.com.bootcamp.fragment_nav.fragment.FragmentActivity
 import pe.com.bootcamp.fragment_nav.sharedPreferences.FormActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tviFragment.setOnClickListener(this)
-        tviBottomNavigation.setOnClickListener(this)
-        tviFragmentDialog.setOnClickListener(this)
-        tviSharedPreferences.setOnClickListener(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        binding.tviFragment.setOnClickListener(this)
+        binding.tviBottomNavigation.setOnClickListener(this)
+        binding.tviFragmentDialog.setOnClickListener(this)
+        binding.tviSharedPreferences.setOnClickListener(this)
     }
 
 
